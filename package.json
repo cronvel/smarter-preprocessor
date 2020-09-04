@@ -1,0 +1,50 @@
+{
+  "name": "smarter-preprocessor",
+  "version": "0.3.4",
+  "description": "A smarter preprocessor for Node, using AST-parsing.",
+  "main": "lib/smarterPreprocessor.js",
+  "directories": {
+    "test": "test"
+  },
+  "bin": {
+    "smarter-preprocessor": "./bin/smarter-preprocessor"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "string-kit": "^0.11.6"
+  },
+  "scripts": {
+    "test": "tea-time -R dot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cronvel/smarter-preprocessor.git"
+  },
+  "keywords": [
+    "smart",
+    "smarter",
+    "preprocessor"
+  ],
+  "author": "Cédric Ronvel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cronvel/smarter-preprocessor/issues"
+  },
+  "config": {
+    "tea-time": {
+      "coverDir": [
+        "lib"
+      ]
+    }
+  },
+  "copyright": {
+    "title": "Smart Preprocessor",
+    "years": [
+      2014,
+      2020
+    ],
+    "owner": "Cédric Ronvel"
+  }
+}
