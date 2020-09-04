@@ -1,6 +1,6 @@
 {
   "name": "smarter-preprocessor",
-  "version": "0.3.4",
+  "version": "0.1.0",
   "description": "A smarter preprocessor for Node, using AST-parsing.",
   "main": "lib/smarterPreprocessor.js",
   "directories": {

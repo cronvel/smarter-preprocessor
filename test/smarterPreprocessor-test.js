@@ -36,12 +36,27 @@ const fs = require( 'fs' ) ;
 
 
 
-describe( "Preprocessor" , function() {
+describe( "Preprocessor" , () => {
 	
 	it( "Test" , () => {
-		var input = 'var str = "some string" ;\nif ( a === b ) { console.log( "equal!" ) ; }\nif ( STATIC.debug ) { console.log( "debug!" ) ; }\n' ;
-		var output = spp.preprocess( input , { debug: true } ) ;
-		console.log( "\n\n=========\n\noutput:\n" , output , "\n" ) ;
+		var input , output ;
+		input = 'var str = "some string" ;\n\n'
+			+ 'if ( a === b ) {\n'
+				+ '\tconsole.log( "equal!" ) ;\n'
+				+ '\tif ( STATIC.debug ) {\n\t\tconsole.log( "debug1!" ) ;\n\t}\n'
+			+ '}\n\n'
+			+ 'if ( STATIC.debug ) {\n\tconsole.log( "debug2!" ) ;\n}\n'
+			+ 'if ( STATIC.param1 === "value" ) {\n\trunSomeCode() ;\n}\n'
+			+ 'if ( ! STATIC.debug ) {\n\trunProductionStuffs() ;\n}\n' ;
+		
+		console.log( "input:\n" + input + "\n" ) ;
+		output = spp.preprocess( input , { debug: true , param1: 'value' } ) ;
+		console.log( "\n\n=========\n\noutput:\n" + output + "\n" ) ;
+		
+		return
+		
+		output = spp.preprocess( input , {} ) ;
+		console.log( "\n\n=========\n\noutput:\n" + output + "\n" ) ;
 	} ) ;
 } ) ;
 
